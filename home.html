@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title >LockedIn</title>
+  <link rel="icon" type="image/x-icon" href="img/logo-removebg-preview (2).png">
+  <link rel="stylesheet" href="homeStyle.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"></script>
+  <script src="navbar.js"></script>
+  <link rel="stylesheet" href="contact/contact.css">
+  <script src="contact/contact.js"></script>
+  <link rel="stylesheet" href="footer.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="navbar.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+</head>
+<body>
+
+  <div class="container">
+    <div class="hero">
+      <video autoplay muted loop>
+        <source src="/img/Untitled video - Made with Clipchamp.mp4" type="video/mp4">
+      </video>
+    </div>
+    
+    <nav>
+      <div class="logo">
+       <a href="home.html"><img src="img/logo-removebg-preview (2).png" alt="LockedIN Logo" style="height: 40px;"></a> 
+      </div>
+      <div class="menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+      <div class="nav-links">
+        <a href="#para">About</a>
+        <a href="#Services">Services</a>
+        <a href="meet_team.html">Meet the Team</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+    
+    <div class="header">
+      <div class="h1">L</div>
+      <div class="h1">o</div>
+      <div class="h1">c</div>
+      <div class="h1">k</div>
+      <div class="h1">e</div>
+      <div class="h1">d</div>
+      <div class="h1">I</div>
+      <div class="h1">n</div>
+    </div>
+
+    <p>
+      LockedIn revolutionizes exam management with seamless creation, real-time monitoring, and advanced analytics. Our platform empowers institutions with robust security features while providing students a user-friendly testing environment. Experience the future of digital assessments.
+    </p>
+  </div>
+  
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"></script>
+
+<script>
+function startLoader() {
+  let counterElement = document.querySelector(".counter");
+  let currentValue = 0;
+
+  function updateCounter() {
+    if (currentValue === 100) {
+      return;
+    }
+
+    currentValue += Math.floor(Math.random() * 10) + 1;
+
+    if (currentValue > 100) {
+      currentValue = 100;
+    }
+
+    counterElement.textContent = currentValue;
+
+    let delay = Math.floor(Math.random() * 100) + 50;
+    setTimeout(updateCounter, delay);
+  }
+
+  updateCounter();
+}
+
+startLoader();
+
+gsap.to(".counter", 0.25, {
+  delay: 2.5,
+  opacity: 0,
+});
+
+gsap.to(".bar", 1.5, {
+  delay: 2.5,
+  height: 0,
+  stagger: {
+    amount: 0.5,
+  },
+  ease: "power4.inOut",
+});
+
+gsap.from(".h1", 1.5, {
+  delay: 3,
+  y: 800,
+  stagger: {
+    amount: 0.5,
+  },
+  ease: "power4.inOut",
+});
+
+gsap.from(".hero", 2, {
+  delay: 3.5,
+  y: 400,
+  ease: "power4.inOut",
+});
+
+gsap.from(".container p", {
+  delay: 3.5,
+  y: 100,
+  opacity: 0,
+  duration: 1.5,
+  ease: "power4.inOut"
+});
+
+
+</script>
+
+
+<section class="spacer"></section>
+
+<section class="marquee">
+  <div class="marquee__inner">
+    <div class="marquee__part">
+      Secure exam application 
+      <div class="arrow">
+        <img src="./assets/arrow.svg" alt="">
+      </div>
+    </div>
+    <div class="marquee__part">
+      Secure exam application 
+
+      <div class="arrow">
+        <img src="./assets/arrow.svg" alt="">
+      </div>
+    </div>
+    <div class="marquee__part">
+      Secure exam application 
+
+      <div class="arrow">
+        <img src="./assets/arrow.svg" alt="">
+      </div>
+    </div>
+    <div class="marquee__part">
+      Secure exam application 
+
+      <div class="arrow">
+        <img src="./assets/arrow.svg" alt="">
+      </div>
+    </div>
+    <div class="marquee__part">
+      Secure exam application 
+
+      <div class="arrow">
+        <img src="./assets/arrow.svg" alt="">
+      </div>
+    </div>
+    <div class="marquee__part">
+      Secure exam application 
+      <div class="arrow">
+        <img src="./assets/arrow.svg" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script>
+  let currentScroll = 0;
+  let isScrollingDown = true;
+  let arrows = document.querySelectorAll(".arrow");
+
+  let tween = gsap
+    .to(".marquee__part", {
+      xPercent: -100,
+      repeat: -1,
+      duration: 5,
+      ease: "linear",
+    })
+    .totalProgress(0.5);
+
+  gsap.set(".marquee__inner", { xPercent: -50 });
+
+  window.addEventListener("scroll", function() {
+    if (window.pageYOffset > currentScroll) {
+      isScrollingDown = true;
+    } else {
+      isScrollingDown = false;
+    }
+
+    gsap.to(tween, { timeScale: isScrollingDown ? 1 : -1, });
+
+    arrows.forEach((arrow) => {
+      if (isScrollingDown) {
+        arrow.classList.remove("active");
+      } else {
+        arrow.classList.add("active");
+      }
+    });
+
+    currentScroll = window.pageYOffset;
+  });
+</script>
+
+
+<section class="section__container class__container" 
+         data-aos="fade-up" 
+         data-aos-duration="1000" 
+         data-aos-mirror="true"
+         data-aos-once="false">
+  <div class="class__image">
+    <span class="bg__blur"></span>
+    <img src="/img/360_F_296120748_FRpOVJJPRvHzfNnd57cMdWbCVAWBVG2a.jpg" alt="class" class="class__img-1" />
+    <img src="/img/pic008_sub06.jpg" alt="class" class="class__img-2" />
+  </div>
+  <div class="class__content" id="para">
+    <h2 class="section__header">About LockedIN</h2>
+
+
+    <p >
+   
+We're building an interactive and connected exam space where students and organizers can seamlessly collaborate. Our goal is to simplify exam creation, student management, and real-time monitoring, ensuring a smooth and transparent examination process.
+
+We're working on features like customizable exam settings, live proctoring, and automated reports to help institutions streamline assessments while maintaining fairness and security. Whether you're managing a small class or a large-scale exam, our platform will adapt to your needs.
+    </p>
+   
+  </div>
+</section>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script> 1 
+<script src="./script.js"></script>
+
+
+
+
+
+
+<div class="services-container" id="Services"
+     data-aos="fade-up" 
+     data-aos-duration="1000"
+     data-aos-mirror="true"
+     data-aos-once="false">
+  <div class="services-header">
+    <h1>Our Services</h1>
+  </div>
+  
+  <div class="services-grid">
+    <!-- Service 1 -->
+    <div class="service-card" data-aos="fade-up">
+      <div class="service-content">
+        <div class="icon-wrapper">
+          <i class="fas fa-edit"></i>
+        </div>
+        <h3>Exam Creation</h3>
+        <p>Create and manage exams with our intuitive step-by-step process. Includes student allocation and organizer assignment features.</p>
+      </div>
+    </div>
+
+    <!-- Service 2 -->
+    <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+      <div class="service-content">
+        <div class="icon-wrapper">
+          <i class="fas fa-desktop"></i>
+        </div>
+        <h3>Live Monitoring</h3>
+        <p>Real-time student activity tracking and device control through our advanced monitoring platform.</p>
+      </div>
+    </div>
+
+    <!-- Service 3 -->
+    <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+      <div class="service-content">
+        <div class="icon-wrapper">
+          <i class="fas fa-history"></i>
+        </div>
+        <h3>Exam History</h3>
+        <p>Comprehensive exam records and attendance tracking with detailed analytics and reporting.</p>
+      </div>
+    </div>
+
+    <!-- Service 4 -->
+    <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+      <div class="service-content">
+        <div class="icon-wrapper">
+          <i class="fas fa-cogs"></i>
+        </div>
+        <h3>Advanced Configuration</h3>
+        <p>Customize exam environments with browser restrictions, shortcut controls, and real-time monitoring.</p>
+      </div>
+    </div>
+
+    <!-- Service 5 -->
+    <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+      <div class="service-content">
+        <div class="icon-wrapper">
+          <i class="fas fa-users"></i>
+        </div>
+        <h3>Student Management</h3>
+        <p>Efficiently manage and organize students individually or in groups with our intuitive system.</p>
+      </div>
+    </div>
+
+    <!-- Service 6 -->
+    <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+      <div class="service-content">
+        <div class="icon-wrapper">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <h3>Enhanced Security</h3>
+        <p>Advanced security features to maintain exam integrity and prevent unauthorized access.</p>
+      </div>
+    </div>
+
+    <!-- Service 7 -->
+    <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+      <div class="service-content">
+        <div class="icon-wrapper">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <h3>Analytics Dashboard</h3>
+        <p>Comprehensive analytics tools for monitoring performance and identifying patterns.</p>
+      </div>
+    </div>
+
+    <!-- Service 8 -->
+    <div class="service-card" data-aos="fade-up" data-aos-delay="700">
+      <div class="service-content">
+        <div class="icon-wrapper">
+          <i class="fas fa-laptop"></i>
+        </div>
+        <h3>Device Registration</h3>
+        <p>Allows Students to regiser their devices beforehand so unauthorized devices cannot be used during the exam.</p>
+      </div>
+    </div>
+
+        <!-- Service 8 -->
+        <div class="service-card" data-aos="fade-up" data-aos-delay="800">
+          <div class="service-content">
+            <div class="icon-wrapper">
+              <i class="fas fa-qrcode"></i>
+            </div>
+            <h3>Secure Exam Accessing</h3>
+            <p>Allows Organizers to scan a QR Code on Students' side to permit entry to the exam.</p>
+          </div>
+        </div>
+  </div>
+</div>
+
+<!-- Add before closing body tag -->
+<script>
+  AOS.init({
+    duration: 800,
+    easing: 'ease-out',
+    once: true
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="parallex"></div>
+
+
+
+
+
+<div class="portfolio-wrapper" id="portfolio"
+     data-aos="fade-up" 
+     data-aos-duration="1000"
+     data-aos-mirror="true"
+     data-aos-once="false">
+  <h1 class="portfolio-header">Portfolio</h1>
+  <div class="portfolio-content">
+      <div class="portfolio-box">
+          <img src="./img/l1.png" alt="">
+          <div class="portfolio-overlay">
+              <div class="portfolio-text">
+              <p>Login Page</p>
+              </div>
+          </div>
+      </div>
+      <div class="portfolio-box">
+          <img src="./img/l2.png" alt="">
+          <div class="portfolio-overlay">
+              <div class="portfolio-text">
+              <p>Lecturer Homepage</p>
+              </div>
+          </div>
+      </div>
+      <div class="portfolio-box">
+          <img src="./img/l3.png" alt="">
+          <div class="portfolio-overlay">
+              <div class="portfolio-text">
+              <p>Extensive Student Information</p>
+              </div>
+          </div>
+      </div>
+
+      <div class="portfolio-box">
+          <img src="./img/s1.png" alt="">
+          <div class="portfolio-overlay">
+              <div class="portfolio-text">
+              <p>Student Homepage</p>
+              </div>
+          </div>
+      </div>
+      <div class="portfolio-box">
+          <img src="./img/s2.png" alt="">
+          <div class="portfolio-overlay">
+              <div class="portfolio-text">
+              <p>Student Settings</p>
+              </div>
+          </div>
+      </div>
+      <div class="portfolio-box">
+          <img src="./img/s3.png" alt="">
+          <div class="portfolio-overlay">
+              <div class="portfolio-text">
+              <p>Revoked Access Page</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+  .download-container {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(135deg, #00ADB5, #3F72AF);
+    border-radius: 20px;
+    padding: 3rem;
+    width: 90%;
+    max-width: 900px; /* Increased max width for more space */
+    margin: 2rem auto; /* Center horizontally and add vertical spacing */
+    text-align: center;
+    overflow: hidden;
+    margin-top: 100px;
+}
+
+
+
+  .download-container::before {
+    justify-content: center;
+    align-items: center;
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      transform: rotate(45deg);
+      z-index: 0;
+  }
+
+  .content {
+      position: relative;
+      z-index: 1;
+  }
+
+  h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+  }
+
+  p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+  }
+
+
+  .team-container {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(135deg, #1B263B, #415A77);
+    border-radius: 20px;
+    padding: 3rem;
+    width: 90%;
+    max-width: 950px;
+    margin: 2rem auto;
+    text-align: center;
+    overflow: hidden;
+    margin-top: 100px;
+    color: white;
+  }
+
+  .team-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    transform: rotate(45deg);
+    z-index: 0;
+  }
+
+  .team-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .team-content h2 {
+    margin-top: -50px;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+
+  .team-content p {
+    margin-top: -50px;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+
+  .team-member {
+    display: inline-block;
+    background-color: #1B263B;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin: 1rem;
+  }
+
+  .team-member:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    background-color: #415A77;
+  }
+
+  .team-member:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .team-icon {
+    width: 80px;
+    height: 80px;
+    background-color: #1B263B;
+    border-radius: 20px;
+    margin: 0 auto 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: 480px) {
+    .team-container {
+      padding: 2rem;
+    }
+
+    .team-content h2 {
+      font-size: 2rem;
+    }
+
+    .team-content p {
+      font-size: 1rem;
+    }
+
+    .team-member {
+      font-size: 1rem;
+      padding: 0.8rem 1.6rem;
+    }
+  }
+</style>
+<div class="team-container">
+  <div class="team-content">
+    <div class="team-icon">👥</div>
+    <h2>Meet Our Team</h2>
+    <p>Get to know the dedicated developers behind LockedIN. Our team is committed to providing the best experience for secure online exams. Connect with us and learn more about our expertise and vision.</p>
+    <a href="meet_team.html" class="team-member">Meet the team </a>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="container2" 
+     data-aos="fade-up" 
+     data-aos-duration="1000"
+     data-aos-mirror="true"
+     data-aos-once="false" id="contact">
+  <span class="big-circle" ></span>
+  <img src="contact/img/shape.png" class="square" alt="" >
+  <div class="form">
+    <div class="contact-info">
+      <h3 class="title">Let's get in touch</h3>
+      <p class="text">
+        Have questions or need support? We’re here to help! Reach out to our dedicated team for assistance with the app, feedback, or inquiries. Contact us via email, phone, or through our online support portal, and we’ll get back to you promptly. Let’s work together to make your exam experience seamless!
+      </p>
+
+      <div class="info">
+        <div class="information">
+            <img src="contact/img/location.png" class="icon" alt="Location icon">
+            <p>Colombo, Sri Lanka</p>
+        </div>
+        <div class="information">
+            <img src="contact/img/email.png" class="icon" alt="Email icon">
+            <p>lockedinseb@gmail.com</p>
+        </div>
+        <div class="information">
+            <img src="contact/img/phone.png" class="icon" alt="Phone icon">
+            <p>077-495-0216</p>
+        </div>
+      </div>
+    
+
+      <div class="social-media">
+        <p>Connect with us :</p>
+        <div class="social-icons">
+          <a href="#">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <span class="circle one"></span>
+      <span class="circle two"></span>
+
+      <form action="index.html" autocomplete="off">
+        <h3 class="title">Contact us</h3>
+        <div class="input-container2">
+          <input type="text" name="name" class="input" >
+          <label >Username</label>
+          <span>Username</span>
+        </div>
+        <div class="input-container2">
+          <input type="email" name="email" class="input" >
+          <label >Email</label>
+          <span>Email</span>
+        </div>
+        <div class="input-container2">
+          <input type="tel" name="phone" class="input" >
+          <label >Phone</label>
+          <span>Phone</span>
+        </div>
+        <div class="input-container2 textarea">
+          <textarea name="message" class="input"></textarea>
+          <label >Message</label>
+          <span>Message</span>
+        </div>
+        <input type="submit" value="Send" class="btn" >
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+  <div class="containerr">
+      <div class="row">
+          <div class="footer-col">
+              <h4>LockedIn</h4>
+              <ul>
+                  <li><a href="#para">about us</a></li>
+                  <li><a href="#Services">our services</a></li>
+              </ul>
+          </div>
+          <div class="footer-col">
+              <h4>get help</h4>
+              <ul>
+                  <li><a href="#contact">Contact</a></li>
+
+              </ul>
+          </div>
+   
+          <div class="footer-col">
+              <h4>follow us</h4>
+              <div class="social-links">
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+          </div>
+          <div class="footer-col">
+            <h4>Gallery</h4>
+            <ul>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="meet_team.html">Meet the Team </a></li>
+            </ul>
+        </div>
+   <div class="madeby">
+     <p>&copy;2025 LockedIn | All Rights Reserved</p>
+   </div>
+   
+      </div>
+  </div>
+</footer>
+
+<!-- Add this script before closing body tag -->
+<script>
+window.addEventListener('scroll', function() {
+  const nav = document.querySelector('nav');
+  if (window.scrollY > 50) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+  }
+});
+</script>
+
+<script>
+  // Initialize AOS
+  AOS.init({
+    duration: 1000,    // Animation duration
+    easing: 'ease',    // Animation timing function
+    once: false,       // Whether animation should happen only once
+    mirror: true,      // Whether elements should animate out while scrolling past them in reverse
+    anchorPlacement: 'top-bottom', // Defines which position of the element regarding to window should trigger the animation
+  });
+
+  // Refresh AOS on scroll to handle reverse animations
+  window.addEventListener('scroll', function() {
+    AOS.refresh();
+  });
+
+  // Optional: Refresh AOS when all content is loaded
+  window.addEventListener('load', function() {
+    AOS.refresh();
+  });
+</script>
+
+</body>
+</html>

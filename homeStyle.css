@@ -1,0 +1,1267 @@
+@import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&family=Poppins:wght@300;400;500;600&family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  background: #222831;
+  font-size: 16px;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+
+.cursor{
+    position: fixed;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #fff;
+    transition: 0.1s;
+    transform: translate(-50%,-50%);
+    pointer-events: none;
+    mix-blend-mode: difference;
+    z-index: 99999999;
+}
+
+
+/* Navbar */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  background: rgba(27, 38, 59, 0.95);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+nav.scrolled {
+  padding: 15px 100px;
+  background: rgba(27, 38, 59, 0.98);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: "Russo One", sans-serif;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  position: relative;
+  padding: 5px 0;
+  transition: all 0.3s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #00ADB5;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #00ADB5;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.logo {
+  color: #ffffff;
+  font-family: "Russo One", sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+
+.menu-btn {
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  nav {
+    padding: 15px 20px;
+  }
+  
+  nav.scrolled {
+    padding: 10px 20px;
+  }
+  
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    width: 100%;
+    background: rgba(27, 38, 59, 0.98);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    transition: 0.3s ease;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .nav-links.active {
+    left: 0;
+  }
+  
+  .menu-btn {
+    display: block;
+  }
+}
+
+/* Header */
+.header {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2em 0;
+}
+
+.header .h1 {
+  position: relative;
+  font-family: "Russo One", sans-serif;
+  font-size: 19vw;
+  font-weight: 350;
+  color: #EEEEEE;
+  line-height: 1.525; 
+  text-align: center;
+  margin-top: -70px;
+}
+
+/* Hero Section */
+.hero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.container p {
+  color: #FFFFFF;
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: -100px;
+  padding: 20px;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  position: relative;
+  z-index: 2;
+}
+
+.hero video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(4px);
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 11;
+  display: flex;
+  pointer-events: none; /* Prevent overlay from blocking interactions */
+}
+
+/* Sidebar Bar */
+.bar {
+  width: 10vw;
+  height: 105vh;
+  background: #DBE2EF;
+  z-index: 90000; /* Ensure it's below the navbar */
+}
+
+/* Counter */
+.counter {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 10000;
+  color: #222831;
+  padding: 0.2em 0.4em;
+  font-size: 20vw;
+}
+
+/* Add overlay to improve text visibility */
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(34, 40, 49, 0.5);
+  z-index: 1;
+}
+
+/* hori card */
+.spacer {
+  height: 100px;
+}
+
+.marquee {
+  font-family: "Russo One", sans-serif;
+  height: 170px;
+  position: relative;
+  background: #005b85;
+  color: #000000;
+  padding: 30px 0;
+  font-weight: 600;
+  font-size: 70px;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+.marquee__inner {
+
+  display: flex;
+  width: fit-content;
+  flex: auto;
+  flex-direction: row;
+}
+
+.marquee__part {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding: 0 4px;
+}
+
+.arrow {
+  width: 60px;
+  height: 80px;
+  margin: 0 1em;
+  transform: rotate(90deg);
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.arrow.active {
+  transform: rotate(-90deg);
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.copy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+h2 {
+  font-family: "Russo One", sans-serif;
+  font-size: 150px;
+  font-weight: 90;
+  line-height: 150px;
+  margin: 0;
+  text-transform: uppercase;
+  color: #EEEEEE;
+  padding: 10px;
+}
+
+p {
+  margin-top: 30px;
+  max-width: 800px;
+  font-family: "Parkinsans", serif;
+  font-size: 1.9em;
+  line-height: 1.2em;
+  align-items: center;
+}
+
+section {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sticky {
+  width: auto;
+  position: relative;
+  background-color: #ded8c8;
+}
+
+.sticky-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250vw;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  will-change: transform;
+}
+.sticky-header h1 {
+  margin: 0;
+  color: #000;
+  font-size: 30vw;
+  font-weight: lighter;
+  letter-spacing: -0.05em;
+  line-height: 100%;
+}
+.card {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  width: 350px;
+  height: 500px;
+  background-color: #000;
+  border-radius: 1em;
+  padding: 0.5em;
+  will-change: transform;
+  z-index: 2;
+  overflow: hidden;
+}
+.card-content {
+  width: 100%;
+  height: 275px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #fff;
+  padding: 0.5em;
+}
+.card-content h2 {
+  font-size: 22px;
+  font-weight: lighter;
+  letter-spacing: -0.005em;
+}
+
+.card-content p {
+  font-size: 20px;
+  font-weight: lighter;
+  letter-spacing: -0.005em;
+}
+.card .card-img {
+  width: 100%;
+  height: 200px;
+  border-radius: 0.5em;
+  overflow: hidden;
+}
+
+/* lenis smooth scroll */
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth[data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth  iframe {
+  pointer-events: none;
+}
+
+.class__container {
+  margin-top: -200px;
+  max-width: var(--max-width);
+  height: auto;
+  margin: auto;
+  padding: 5rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  align-items: center; /* Aligns content vertically */
+}
+
+.class__image {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center; /* Centers images */
+}
+
+.class__image .class__img-1 {
+  position: relative;
+  max-width: 900px;
+  height: 450px;
+  border-radius: 10px;
+}
+
+.class__image .class__img-2 {
+  z-index: 2; /* Ensures this image is on top */
+  position: absolute;
+  left: 20px;
+  bottom: -60px;
+  max-width: 350px;
+  border-radius: 10px;
+  z-index: 1; /* Stacks this image below */
+}
+
+.class__content {
+  padding: 2rem 0;
+  color: white;
+  text-align: left;
+}
+
+.class__content .section__header {
+  margin-bottom: -50px;
+  text-align: left;
+  color: white;
+}
+
+.class__content p {
+  margin-bottom: 1.5rem;
+  line-height: 2;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #f4a12e; /* Button color */
+  color: black;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #d48f28; /* Hover state */
+}
+
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  padding: 20px;
+  flex-grow: 1; /* Makes the container fill the remaining space */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+
+
+
+:root {
+  --primary-dark: #222831;
+  --secondary-dark: #112240;
+  --accent-blue: #64FFDA;
+  --text-primary: #CCD6F6;
+  --text-secondary: #8892B0;
+}
+
+.packages {
+  padding: 2rem;
+  background: #222831;
+  position: relative;
+}
+
+.package-txt {
+  text-align: center;
+  padding-top: 4rem;
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 2;
+}
+
+.package-txt h1 {
+  font-family: "Russo One", sans-serif;
+  font-size: 3rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.package-txt h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 4px;
+  background: #00ADB5;
+  border-radius: 2px;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 2rem auto 0;
+  padding: 0 1rem;
+}
+
+.feature-card {
+  background: rgba(45, 51, 63, 0.9);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+  height: 350px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.card-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.feature-card:hover .card-image img {
+  transform: scale(1.1);
+}
+
+.card-content {
+  padding: 1.5rem;
+  background: linear-gradient(to top, #2d333f 80%, transparent);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(60%);
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover .card-content {
+  transform: translateY(0);
+}
+
+.card-content h3 {
+  color: #00ADB5;
+  font-family: "Russo One", sans-serif;
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.card-content p {
+  color: #EEEEEE;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover .card-content p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .cards-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  
+  .package-txt h1 {
+    font-size: 2rem;
+  }
+  
+  .feature-card {
+    height: 300px;
+  }
+}
+
+.packages {
+  position: relative;
+  width: 100%;
+  min-height: 800px; /* Ensures enough height to fit content */
+  overflow: hidden; /* Ensures content doesn't overflow */
+  z-index: 1; /* Positions the cards above the background */
+}
+
+.services-container {
+  position: relative;
+  background-color: var(--primary-dark);
+  padding: 100px 20px;
+  min-height: 100vh;
+  overflow: hidden; /* Add this to contain the background */
+}
+
+.services-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/img/honeycomb-cyber-security-de1nra8.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  filter: blur(8px);
+  opacity: 0.7; /* Reduced opacity for better visibility */
+  z-index: 0;
+}
+
+/* Ensure content stays above the background */
+.services-header, .services-grid {
+  position: relative;
+  z-index: 1;
+}
+
+.card1, .card2, .card3, .card4 {
+  position: relative;
+  z-index: 2; /* Ensures the cards are above the background image */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+  width: 350px; /* Fixed width */
+  height: 500px; /* Fixed height */
+  margin: auto;
+  text-align: left;
+  margin-top: 100px;
+  background: #ffffff; /* Ensures the cards have a solid background */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Aligns content evenly within */
+}
+
+.services-container {
+  background-color: var(--primary-dark);
+  padding: 100px 20px;
+  min-height: 100vh;
+}
+
+.services-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.services-header h1 {
+  color: #ffffff;  /* Changed from var(--text-primary) to white */
+  font-size: 2.5rem;
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+  font-family: "Russo One", sans-serif;
+}
+
+.services-header h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 60%;
+  height: 4px;
+  background: var(--accent-blue);
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background: var(--secondary-dark);
+  border-radius: 15px;
+  padding: 30px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent, rgba(100, 255, 218, 0.1));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+.icon-wrapper {
+  width: 60px;
+  height: 60px;
+  background: rgba(100, 255, 218, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.icon-wrapper i {
+  color: #ffffff;  /* Changed from var(--accent-blue) to white */
+  font-size: 24px;
+}
+
+.service-content h3 {
+  color: #ffffff;  /* Changed from var(--text-primary) to white */
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  font-weight: 500;
+  font-family: "Russo One", sans-serif;
+}
+
+.service-content p {
+  color: #ffffff;  /* Changed from var(--text-secondary) to white */
+  line-height: 1.6;
+  font-size: 0.95rem;
+  font-family: "Parkinsans", serif;
+}
+
+/* Animation classes */
+[data-aos] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+[data-aos].aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .services-header h1 {
+    font-size: 2rem;
+  }
+
+  .service-card {
+    padding: 25px;
+  }
+}
+
+/* Portfolio Wrapper Improvements */
+.portfolio-wrapper {
+  height: auto;
+  background-color: #222831;
+  width: 100%;
+  padding: 50px 0;  /* Increased padding */
+  text-align: center;
+  align-items: center;
+  margin: 0;  /* Reset margin */
+}
+
+/* Portfolio Content Grid */
+.portfolio-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 0 15px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Individual Portfolio Boxes */
+.portfolio-content .portfolio-box {
+  position: relative;
+  aspect-ratio: 16/9; /* Forces rectangular aspect ratio */
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.30);
+}
+
+/* Image Styling */
+.portfolio-content .portfolio-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Hover Effects */
+.portfolio-content .portfolio-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.portfolio-content .portfolio-box:hover img {
+  transform: scale(1.1);
+}
+
+.portfolio-content .portfolio-box .portfolio-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+}
+
+.portfolio-content .portfolio-box:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+/* Added hover effect with border */
+.portfolio-content .portfolio-box::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  border: 2px solid var(--accent-blue);
+  opacity: 0;
+  transform: scale(1.1);
+  transition: all 0.4s ease-in-out;
+}
+
+.portfolio-content .portfolio-box:hover::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 992px) {
+  .portfolio-content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .portfolio-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 15px;
+  }
+
+  .portfolio-content .portfolio-box {
+    aspect-ratio: 16/10; /* Slightly different ratio for mobile */
+  }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 992px) {
+  .portfolio-content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 0 30px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .portfolio-content {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 0 20px;
+  }
+  
+  .portfolio-content .portfolio-box {
+    height: 250px;
+  }
+}
+
+/* Portfolio Wrapper */
+.portfolio-wrapper {
+  height: auto;
+  background-color: #222831;
+  width: 100%;
+  padding: 30px 0;
+  text-align: center;
+  align-items: center;
+  margin-left: 5px; /* Optional for centering adjustment */
+}
+
+/* Header Styling */
+.portfolio-header {
+  font-family: "Russo One", sans-serif;
+  text-transform: uppercase;
+  line-height: 70px;
+  padding-bottom: 30px;
+  font-size: 50px;
+  color: #ffffff;
+  letter-spacing: 2px;
+}
+
+/* Overlay Text */
+.portfolio-text {
+  padding: 10%;
+}
+
+.portfolio-text h2 {
+  font-size: 30px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.portfolio-text p {
+  line-height: 1.5;
+}
+
+/* Portfolio Content Grid */
+.portfolio-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  grid-template-rows: auto; /* Automatic row heights */
+  gap: 30px; /* Uniform spacing between boxes */
+  padding: 0 15px; /* Small padding for better alignment */
+  box-sizing: border-box;
+  row-gap: 50px;
+}
+
+/* Individual Portfolio Boxes */
+.portfolio-content .portfolio-box {
+  gap: 50px;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.30);
+  height: 290px; /* Fixed height for all boxes */
+  overflow: hidden;
+  box-sizing: border-box; /* Padding won't affect size */
+}
+
+/* Decorative Border Effect */
+.portfolio-content .portfolio-box::before {
+  
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 5px;
+  height: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.portfolio-content .portfolio-box:hover::before {
+  top: 0;
+  right: calc(100% - 5px);
+  z-index: 10;
+}
+
+/* Image Styling */
+.portfolio-content .portfolio-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure images cover the box perfectly */
+}
+
+/* Overlay Styling */
+.portfolio-content .portfolio-box .portfolio-overlay {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.9);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 100%;
+  transition: all 0.5s ease-in-out;
+}
+
+.portfolio-content .portfolio-box:hover .portfolio-overlay {
+  top: 0;
+  right: 0;
+}
+
+/* Add at the end of the file */
+
+@media screen and (max-width: 1200px) {
+  .cards-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .portfolio-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .class__container {
+    gap: 2rem;
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .header .h1 {
+    font-size: 15vw;
+  }
+
+  .container p {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+
+  .class__container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    margin: 0 auto;
+    max-width: 800px;
+    text-align: center;
+  }
+
+  .class__image {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  .class__image .class__img-1 {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .class__content {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .class__content p {
+    text-align: center;
+    margin: 1.5rem auto;
+    max-width: 600px;
+  }
+
+  .class__container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .portfolio-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  nav {
+    padding: 15px 30px;
+  }
+  
+  nav.scrolled {
+    padding: 10px 30px;
+  }
+  
+  .nav-links {
+    gap: 20px;
+  }
+  
+  .nav-links a {
+    font-size: 0.9rem;
+  }
+
+  .download-container {
+    padding: 2rem;
+  }
+
+  .package-txt h1 {
+    font-size: 2.5rem;
+  }
+
+  .class__content h2 {
+    font-size: 1.8rem;
+  }
+
+  .class__content p {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    padding: 0.8rem 1.8rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+
+  .header .h1 {
+    font-size: 12vw;
+  }
+
+  .container p {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .marquee {
+    font-size: 40px;
+    height: 120px;
+  }
+
+  .class__content p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .download-container {
+    padding: 1.5rem;
+  }
+
+  .download-container h2 {
+    font-size: 1.8rem;
+  }
+
+  .class__container {
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+
+  .class__image {
+    max-width: 100%;
+  }
+
+  .class__content {
+    padding: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  nav div {
+    gap: 0.5em;
+  }
+
+  .portfolio-header {
+    font-size: 35px;
+    line-height: 50px;
+  }
+
+  .feature-card {
+    height: 300px;
+  }
+
+  .card-content h3 {
+    font-size: 1rem;
+  }
+
+  .card-content p {
+    font-size: 0.8rem;
+  }
+
+  .class__content h2 {
+    font-size: 1.5rem;
+  }
+
+  .class__image {
+    max-width: 100%;
+  }
+
+  .class__content p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+}
+
+/* Add these at the end of your CSS file */
+[data-aos] {
+  pointer-events: none; /* Prevent animation glitches */
+}
+
+[data-aos].aos-animate {
+  pointer-events: auto;
+}
+
+/* Optional: Add custom animation styles */
+@media screen and (prefers-reduced-motion: no-preference) {
+  [data-aos="fade-up"] {
+    transform: translate3d(0, 50px, 0);
+    opacity: 0;
+    transition-property: transform, opacity;
+  }
+
+  [data-aos="fade-up"].aos-animate {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+/* Ensure smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Disable animations for users who prefer reduced motion */
+@media screen and (prefers-reduced-motion: reduce) {
+  [data-aos] {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
