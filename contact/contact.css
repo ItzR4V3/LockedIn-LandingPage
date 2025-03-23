@@ -114,7 +114,7 @@ textarea.input {
   font-size: 0.9rem;
   font-weight: 400;
   pointer-events: none;
-  z-index: 1;
+  z-index: 1000;
   transition: 0.5s;
 }
 
@@ -162,7 +162,7 @@ textarea.input {
   opacity: 0;
   transition: 0.3s;
   height: 5px;
-  background-color: #00ADB5;
+  background-color: #3F72AF;
   top: 50%;
   transform: translateY(-50%);
 }

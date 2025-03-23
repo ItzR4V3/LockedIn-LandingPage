@@ -88,15 +88,53 @@ ul{
 
 /*responsive*/
 @media(max-width: 767px){
-  .footer-col{
-    width: 50%;
-    margin-bottom: 30px;
+    .footer {
+        padding: 50px 0;
+        max-height: none;
+    }
+    
+    .footer-col{
+        width: 50%;
+        margin-bottom: 30px;
+    }
+    
+    .madeby p {
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .footer .row {
+        justify-content: center;
+    }
 }
-}
+
 @media(max-width: 574px){
-  .footer-col{
-    width: 100%;
-}
+    .footer-col{
+        width: 100%;
+        text-align: center;
+    }
+    
+    .footer-col h4::before {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .footer-col .social-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .madeby {
+        width: 100%;
+    }
+    
+    .madeby p {
+        padding: 10px;
+        margin: 0 auto;
+        width: 100%;
+    }
 }
 
 /* Add this to your footer styles */

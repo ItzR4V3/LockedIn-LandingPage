@@ -356,7 +356,7 @@ We're working on features like customizable exam settings, live proctoring, and 
           <i class="fas fa-laptop"></i>
         </div>
         <h3>Device Registration</h3>
-        <p>Allows Students to regiser their devices beforehand so unauthorized devices cannot be used during the exam.</p>
+        <p>Allows Students to register their devices beforehand so unauthorized devices cannot be used during the exam.</p>
       </div>
     </div>
 
@@ -543,16 +543,7 @@ We're working on features like customizable exam settings, live proctoring, and 
     color: white;
   }
 
-  .team-container::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    transform: rotate(45deg);
-    z-index: 0;
-  }
+ 
 
   .team-content {
     position: relative;
@@ -681,16 +672,13 @@ We're working on features like customizable exam settings, live proctoring, and 
       <div class="social-media">
         <p>Connect with us :</p>
         <div class="social-icons">
-          <a href="#">
+          <a href="https://web.facebook.com/people/LockedIn/61573122196727/">
             <i class="fab fa-facebook-f"></i>
           </a>
-          <a href="#">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a href="#">
+          <a href="https://www.instagram.com/lockedin.seb/">
             <i class="fab fa-instagram"></i>
           </a>
-          <a href="#">
+          <a href="https://www.linkedin.com/company/lockedinseb">
             <i class="fab fa-linkedin-in"></i>
           </a>
         </div>
@@ -700,30 +688,29 @@ We're working on features like customizable exam settings, live proctoring, and 
     <div class="contact-form">
       <span class="circle one"></span>
       <span class="circle two"></span>
-
-      <form action="index.html" autocomplete="off">
+      <form id="contactForm" onsubmit="return sendEmail(event)">
         <h3 class="title">Contact us</h3>
         <div class="input-container2">
-          <input type="text" name="name" class="input" >
-          <label >Username</label>
+          <input type="text" name="name" class="input" required>
+          <label for="">Username</label>
           <span>Username</span>
         </div>
         <div class="input-container2">
-          <input type="email" name="email" class="input" >
-          <label >Email</label>
+          <input type="email" name="email" class="input" required>
+          <label for="">Email</label>
           <span>Email</span>
         </div>
         <div class="input-container2">
-          <input type="tel" name="phone" class="input" >
-          <label >Phone</label>
+          <input type="tel" name="phone" class="input">
+          <label for="">Phone</label>
           <span>Phone</span>
         </div>
         <div class="input-container2 textarea">
-          <textarea name="message" class="input"></textarea>
-          <label >Message</label>
+          <textarea name="message" class="input" required></textarea>
+          <label for="">Message</label>
           <span>Message</span>
         </div>
-        <input type="submit" value="Send" class="btn" >
+        <input type="submit" value="Send" class="btn">
       </form>
     </div>
   </div>
@@ -765,7 +752,6 @@ We're working on features like customizable exam settings, live proctoring, and 
               <h4>follow us</h4>
               <div class="social-links">
                   <a href="https://web.facebook.com/people/LockedIn/61573122196727/"><i class="fab fa-facebook-f"></i></a>
-                  <a href="#"><i class="fab fa-twitter"></i></a>
                   <a href="https://www.instagram.com/lockedin.seb/"><i class="fab fa-instagram"></i></a>
                   <a href="https://www.linkedin.com/company/lockedinseb"><i class="fab fa-linkedin-in"></i></a>
               </div>
